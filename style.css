@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.case {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    border: 3px solid black;
+}
+
+.niveau1 {
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.start {
+    background: black;
+}
+
+.activeCase {
+    border: 3px solid red;
+}
+
+.SEO {
+    background: yellow;
+}
+
+.keyword {
+    background: pink;
+}
+
+.tools {
+    background: lightblue;
+}
+
+.balise {
+    background: orange;
+}
+
+.archi {
+    background: limegreen;
+}
