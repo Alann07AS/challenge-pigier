@@ -8,6 +8,5 @@ class board {
         this.easyway = [];
         this.inForkId = Math.random(4)+1; //choisis alétoirement la case de bifurcation
         this.outForkId = this.InForkId+2;   //récuperer la bifurcation 2 case aprés
-        
     }
 }
