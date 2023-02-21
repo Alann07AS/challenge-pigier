@@ -13,10 +13,10 @@ function initLvl1() {
             <div id="question-container" class="hide">
                 <div id="question">Question</div>
                 <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+                <button class="btn">Réponse 1</button>
+                <button class="btn">Réponse 2</button>
+                <button class="btn">Réponse 3</button>
+                <button class="btn">Réponse 4</button>
                 </div>
             </div>
         </div>`
@@ -36,11 +36,11 @@ function initLvl1() {
         switch (i) {
             case 0: 
                 c.classList.add("start")
-                front.innerHTML = `<h3>START</h3>`
+                front.innerHTML = `<h1>START</h1>`
                 break;
             case 6 : 
                 c.classList.add("end")
-                front.innerHTML = `<h3>END</h3>`
+                front.innerHTML = `<h1>END</h1>`
                 break;
             case 1:
             case 11:
@@ -69,6 +69,10 @@ function initLvl1() {
         c.appendChild(back);
         niveau1.appendChild(c);
     }
+}
+
+function initGame(){
+    
 }
 
 initLvl1();
