@@ -1,0 +1,39 @@
+[
+		{
+			"BonneReponse": "Oui",
+			"Catégorie": "Les balises",
+			"Difficulty": "Facile",
+			"MauvaiseReponse1": "Non",
+			"MauvaiseReponse2": "Oui",
+			"MauvaiseReponse3": "",
+			"Question": "Est ce que une méta description est utile ?",
+			"id": 1
+		},
+		{
+			"BonneReponse": "H1",
+			"Catégorie": "Les balises",
+			"Difficulty": "Facile",
+			"MauvaiseReponse1": "H2",
+			"MauvaiseReponse2": "H7",
+			"MauvaiseReponse3": "H3",
+			"Question": "Quelle balise doit être intégrée une seule fois sur une page internet ?",
+			"id": 2
+		},
+		{
+			"BonneReponse": "Naturel= résultats qui apparaissent gratuitement dans le moteur de recherche Payant= les résultats présents dans le haut ou le coté d'une page",
+			"Catégorie": "SEO, c'est quoi ?",
+			"Difficulty": "Difficulté ",
+			"MauvaiseReponse1": "Payant= résultats qui apparaissent gratuitement dans le moteur de recherche Naturel= les résultats présents dans le haut ou le coté d'une page",
+			"MauvaiseReponse3": "",
+			"Question": "Quelle est la différence entre référencement naturel et le référencement payant ?",
+			"id": 3
+		},
+		{
+			"BonneReponse": "Un lien entrant vers mon site",
+			"Catégorie": "Architecture du site",
+			"Difficulty": "Facile",
+			"MauvaiseReponse3": "Un lien entrant vers mon site",
+			"Question": "Qu'est ce qu'un backlink ?",
+			"id": 4
+		}
+	]
