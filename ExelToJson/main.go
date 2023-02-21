@@ -8,7 +8,7 @@ import (
 )
 
 // !!!!!!!!!!!!!!!  préciser le nombre de question présent !!!!!!!!!!!!!//
-const QUESTIONS_NB = 4
+const QUESTIONS_NB = 74
 
 // !!!!!!!!!!!!!!!  préciser le nombre de question présent !!!!!!!!!!!!!//
 
