@@ -1,6 +1,5 @@
 console.log("INIT BOARD CLASS");
 
-
 class board {
     /**
      * @param {Array.<lvl>} lvls le lvl
@@ -12,17 +11,23 @@ class board {
         this.cards = cards;
         this.levelToShow = 0;
         this.width = 0;
+        this.matris = [];
 
         const div =  document.getElementById("board");
         this.div = div;
         // this.div.style.gridTemplateColumns = "repeat( "+this.width+" ,130px);"
     }
 
+    clear() {
+        this.div.innerHTML = "";
+    }
+
     showBoard() {
+        this.clear();
         for (let iLvl = 0; iLvl <= this.levelToShow; iLvl++) {
             console.log("COUCOU");
             const lv = this.lvls[iLvl];
-            lv.matris.matris.forEach((v)=>{
+            lv.matris.table.forEach((v)=>{
                 const c = document.createElement("div");
                 const front = document.createElement("div")
                 front.classList.add("front")
@@ -62,6 +67,12 @@ class board {
     }
 }
 
+class boardMatrisElement {
+    constructor(card, x, y, div, ) {
+
+    }
+}
+
 const boardObj = new board()
 
 class lvl {
@@ -74,8 +85,6 @@ class lvl {
     constructor(idStart, idEnd, forkIN, matris) {
         this.idStart = idStart;
         this.idEnd = idEnd;
-        /**@type {Array.<card>} */
-        this.cards =  [];
         /**@type {matrisLvl} */
         this.matris = matris;
 
@@ -101,8 +110,9 @@ class matrisLvl {
      */
     constructor (matris, width) {
         /**@type {Array} */
-        this.matris = matris;
+        this.table = matris;
         this.width = width;
+        this.height = matris.length/width;
     }
 }
 
