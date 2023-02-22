@@ -25,7 +25,6 @@ class board {
     showBoard() {
         this.clear();
         for (let iLvl = 0; iLvl <= this.levelToShow; iLvl++) {
-            console.log("COUCOU");
             const lv = this.lvls[iLvl];
             lv.matris.table.forEach((v)=>{
                 const c = document.createElement("div");
@@ -56,9 +55,12 @@ class board {
             })
         }
     }
-
+    /**
+     * @param {lvl} lvl 
+     */
     addLvl (lvl) {
         this.lvls.push(lvl);
+        // this.matris = mergeTo2dArayAtCoordonate(this.matris, lvl.matris.table, lvl.)
     }
 
     showNextLevel() {
@@ -68,7 +70,7 @@ class board {
 }
 
 class boardMatrisElement {
-    constructor(card, x, y, div, ) {
+    constructor(card, x, y, div) {
 
     }
 }
@@ -85,6 +87,7 @@ class lvl {
     constructor(idStart, idEnd, forkIN, matris) {
         this.idStart = idStart;
         this.idEnd = idEnd;
+
         /**@type {matrisLvl} */
         this.matris = matris;
 
@@ -110,9 +113,13 @@ class matrisLvl {
      */
     constructor (matris, width) {
         /**@type {Array} */
-        this.table = matris;
         this.width = width;
         this.height = matris.length/width;
+        const temp = [];
+        for (let i = 0; i < this.height; i++) {
+            temp.push(matris.slice(i*width, i*width+width-1));
+        }
+        this.table = temp;
     }
 }
 
@@ -121,7 +128,7 @@ class card {
         this.id = id;
         this.categorie_class = categorie_class;
         this.question = question;
-        this.goodAnswer = goodAnswer; 
+        this.goodAnswer = goodAnswer;
         this.badAnswer = badAnswer;
         this.difficulty = difficulty;
     }
@@ -136,3 +143,53 @@ const TOOLS = "tools"
 const BALISE = "balise"
 const ARCHI = "archi"
 const HIDDEN = "hidden"
+
+/**
+ * 
+ * @param {Array} arr1 
+ * @param {Array} arr2 
+ */
+function mergeTo2dArayAtCoordonate(arr1, arr2, x1, y1, x2, y2) {
+    const arr1Spaces = spacesCalc(arr1, x1, y1)
+    const arr2Spaces = spacesCalc(arr2, x2, y2)
+    // [haut, droite, bas, gauche]
+    const dif = [(arr2Spaces[0] - arr1Spaces[0]), (arr2Spaces[1] - arr1Spaces[1]), (arr2Spaces[2] - arr1Spaces[2]), (arr2Spaces[3] - arr1Spaces[3])]
+    if (dif[0] > 0) {//haut
+        for (let i = 0; i < dif[0]; i++) {
+            y1++
+            arr1.unshift(Array(w))
+        }
+    }
+    if (dif[2] > 0) {//bas
+        for (let i = 0; i < dif[2]; i++) {
+            arr1.push(Array(w))
+        }
+    }
+    if (dif[1] > 0) {//droite
+        for (let i = 0; i < dif[1]; i++) {
+            arr1.forEach( () => {
+                arr1.push(null)
+            });
+        }
+    }
+    if (dif[3] > 0) {//gauche
+        for (let i = 0; i < dif[3]; i++) {
+            x1++
+            arr1.forEach( () => {
+                arr1.unshift(null)
+            });
+        }
+    }
+    return arr1
+}
+
+function spacesCalc(arr, x, y) {
+    const h = arr.length;
+    const w = arr[0].length;
+    const droite = w - (x+1);
+    const gauche = w - droite -1;
+    const bas = h - (y+1);
+    const haut = h - bas - 1;
+    // [haut, droite, bas, gauche]
+    return [haut, droite, bas, gauche];
+}

@@ -6,7 +6,7 @@ const lvl1Matris =  new matrisLvl([
     HIDDEN,    HIDDEN,   ARCHI,   HIDDEN,   SEO,    HIDDEN,     HIDDEN,
     HIDDEN,    HIDDEN,   BALISE,  KEYWORD,  TOOLS,  HIDDEN,     HIDDEN
 ], 7);
-console.log(lvl1Matris.height);
+console.log(lvl1Matris.table);
 const lvl1 = new lvl(0, 6, 2, lvl1Matris);
 
 boardObj.addLvl(lvl1);
