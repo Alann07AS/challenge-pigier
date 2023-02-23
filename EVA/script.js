@@ -94,7 +94,7 @@ function initLvl1() {
             case 1:
             case 11:
                 c.classList.add("SEO")
-                front.innerHTML = `<img class="category" src="5.png" alt="category">`
+                front.innerHTML = `<img class="category" src="5.png" alt="category"><h1>SEO</h1>`
                 break;
             case 2:
             case 17:
@@ -137,6 +137,16 @@ function movePion(){
     }, 1000);
 }
 
+function startOfGame() {
+    document.body.onkeyup = function(e) {
+        if (e.key == " " ||
+            e.code == "Space"    
+        ) {
+          movePion();
+        }
+    }
+}
+
 function initGame(){
     const activeCase = document.getElementById(activeCaseId.toString());
     activeCase.appendChild(pion)
@@ -177,7 +187,6 @@ function endOfLvl1(bool) {
         niveau1.style.display = "none";
         lifeDiv.style.display = "none";
         console.log("Fin Du game WIN");
-        redirectToCertificatePage();
     } else {
         perduDiv.style.display = "block";
         lifeDiv.style.display = "none";
@@ -239,12 +248,10 @@ function selectAnswer(e) {
     
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    let activeCase = document.getElementById(activeCaseId.toString());
     if (correct) {
-        activeCase.classList.add("right");
+        console.log("bien ouej ma ptite gueule");
 
     } else {
-        activeCase.classList.add("wrong");
         lifeCount --;
         updateLife();
         
@@ -254,10 +261,6 @@ function selectAnswer(e) {
     }
     askDifficulty()
     
-}
-
-function redirectToCertificatePage() {
-    window.location.href = "certificate.html";
 }
 
 startButton.addEventListener('click', function(event) {
