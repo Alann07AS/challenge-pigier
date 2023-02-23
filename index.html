@@ -5,11 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <script defer src="script.js" type="module"></script>
     <title>Board Game</title>
 </head>
 <body>
-    <div class="score" id="score"><h1>SCORE : 0 pts</h1></div>
+    <!-- <div class="logo" id="logo"><img src="logo.jpg" alt="le logo du jeu"></div> -->
+    <div class="score" id="score"></div>
     <div class="niveau1" id="niveau1"></div>
+
+    <div id="myModalEnd" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>FIN DU GAME SCORE : 10000</p>
+        </div>
+    </div>
+
+    <div id="myModalDifficulty" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <p>Choose your difficulty</p>
+          <button id="easyBtn">Facile</button>
+          <button id="hardBtn">Difficile</button>
+        </div>
+    </div>
+
 </body>
 </html>
